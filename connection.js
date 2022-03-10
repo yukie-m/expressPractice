@@ -4,12 +4,12 @@ const mongoose = require("mongoose");
 
 // as defined in 'Database Access' on Atlas/Mongo
 
-const dbname = "dummy_db";
-const username = "kdowd";
-const password = "ursulaNiamh";
+const dbname = "yoobee";
+const username = "ymat";
+const password = "Yuki-E2917";
 
 // with backticks
-const url = `mongodb+srv://${username}:${password}@yoobee2020.vhp1l.gcp.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+const url = `mongodb+srv://${username}:${password}@mondayreact.bgw3j.mongodb.net/${dbname}?retryWrites=true&w=majority`;
 
 // end editable
 
