@@ -2,7 +2,7 @@ const express = require("express");
 
 const cors = require("cors");
 
-const Artists = require("./models/artists");
+const Products = require("./models/products");
 
 const app = express();
 app.use(express.json());
@@ -22,43 +22,43 @@ app.use("/api", router);
 
 ////////////////////////ALL ROUTES
 
-router.get("/view-artists", function (req, res) {
-  Artists.find().then((response) => {
+router.get("/view-products", function (req, res) {
+  Products.find().then((response) => {
     res.json(response);
   });
 });
 
-router.get("/view-artist-by-id/:id", function (req, res) {
-  Artists.findOne({ _id: req.params.id }).then((response) => {
+router.get("/view-product-by-id/:id", function (req, res) {
+  Products.findOne({ _id: req.params.id }).then((response) => {
     res.json(response);
   });
 });
 
-router.delete("/delete-artist-by-id/:id", function (req, res) {
-  Artists.deleteOne({ _id: req.params.id }).then((response) => {
+router.delete("/delete-product-by-id/:id", function (req, res) {
+  Products.deleteOne({ _id: req.params.id }).then((response) => {
     res.json(response);
   });
 });
 
-// CREATE new artist
-router.post("/create-artist", function (req, res) {
-  var newArtist = new Artists();
+// CREATE new product
+router.post("/create-product", function (req, res) {
+  var newProduct = new Products();
   var theFormData = req.body;
   console.log(">>> ", theFormData);
 
-  Object.assign(newArtist, theFormData);
+  Object.assign(newProduct, theFormData);
 
-  newArtist.save().then((response) => {
+  newProduct.save().then((response) => {
     return res.json(response);
   });
 });
 
 // end CREATE new writer
 
-router.get("/view-artist-by-firstname/:name", function (req, res) {
+router.get("/view-product-by-firstname/:name", function (req, res) {
   // console.log(req.params.name);
 
-  Artists.findOne({ firstname: req.params.name }).then((response) => {
+  Products.findOne({ firstname: req.params.name }).then((response) => {
     res.json(response);
   });
 });
