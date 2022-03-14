@@ -9,6 +9,13 @@ var ProductsSchema = new Schema({
   price: Number,
   status: String,
   thumb: String,
+  area: String,
+  category: String,
+  condition: String,
+  item: String,
+  collecting: String,
+  size: String,
+  rate: Number,
 });
 
 // singular capitalized name for the mongo collection - Products
